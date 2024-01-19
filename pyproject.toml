@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "dishes-menu-api"
+version = "0.1.0"
+description = "This project is an example of an API representing the relationship of the main menu to submenus and dishes."
+authors = ["Alexandr Abramov <https://github.com/Abramov0Alexandr>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.109.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+sqlalchemy = "^2.0.25"
+asyncpg = "^0.29.0"
+alembic = "^1.13.1"
+pydantic = "^2.5.3"
+aiohttp = {extras = ["speedups"], version = "^3.9.1"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
