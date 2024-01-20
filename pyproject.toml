@@ -18,6 +18,11 @@ alembic = "^1.13.1"
 pydantic = "^2.5.3"
 aiohttp = {extras = ["speedups"], version = "^3.9.1"}
 
+
+[tool.poetry.group.linters.dependencies]
+pre-commit = "^3.6.0"
+black = "^23.12.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
