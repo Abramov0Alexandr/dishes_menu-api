@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
 
 # Project information.
 # https://fastapi.tiangolo.com/tutorial/metadata/#metadata-for-api
