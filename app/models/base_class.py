@@ -1,15 +1,12 @@
-from abc import ABCMeta
-from dataclasses import dataclass
+from uuid import UUID
 
-from pydantic import Field, UUID4
 from sqlalchemy import MetaData
+from sqlalchemy import String
+from sqlalchemy import Text
 from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import as_declarative, MappedAsDataclass, registry
-from sqlalchemy import Integer, String, Text
+from sqlalchemy.orm import as_declarative
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
-from uuid import UUID, uuid4
-
 
 metadata = MetaData()
 

@@ -1,4 +1,6 @@
 import os
+from typing import Optional
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,9 +15,7 @@ project_detail_information = {
         "name": "Alexandr Abramov",
         "url": "https://github.com/Abramov0Alexandr",
     },
-    "license_info": {
-        "name": "MIT License"
-    },
+    "license_info": {"name": "MIT License"},
 }
 
 
@@ -23,19 +23,20 @@ project_detail_information = {
 # https://fastapi.tiangolo.com/tutorial/sql-databases/
 # https://fastapi.tiangolo.com/how-to/async-sql-encode-databases/ (deprecated ?)
 
+
 class DatabaseSettings:
     """
     The class contains the basic settings for connecting to the database.
     """
 
-    DB_USER: str = os.getenv("DB_USER")
-    DB_PASSWORD: str = os.getenv("DB_PASSWORD")
-    DB_HOST: str = os.getenv("DB_HOST", "localhost")
-    DB_PORT: str = os.getenv("DB_PORT", 5432)
-    DB_NAME: str = os.getenv("DB_NAME")
-    DATABASE_URL: str = (
-        f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-    )
+    DB_USER: Optional[str] = os.getenv("DB_USER")
+    DB_PASSWORD: Optional[str | int] = os.getenv("DB_PASSWORD")
+    DB_HOST: Optional[str] = os.getenv("DB_HOST", "localhost")
+    DB_PORT: Optional[str | int] = os.getenv("DB_PORT", 5432)
+    DB_NAME: Optional[str] = os.getenv("DB_NAME")
+    DATABASE_URL: Optional[
+        str
+    ] = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 
 db_settings = DatabaseSettings()
