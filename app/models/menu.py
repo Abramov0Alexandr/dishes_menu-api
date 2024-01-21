@@ -1,8 +1,9 @@
 from typing import TYPE_CHECKING
 
-from app.models.base_class import BaseModel
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import relationship
+
+from app.models.base_class import BaseModel
 
 
 if TYPE_CHECKING:
@@ -10,4 +11,6 @@ if TYPE_CHECKING:
 
 
 class Menu(BaseModel):
-    sub_menu: Mapped[list["SubMenu"]] = relationship("SubMenu", back_populates="parent_menu")
+    sub_menu: Mapped[list["SubMenu"]] = relationship(
+        "SubMenu", back_populates="parent_menu"
+    )
